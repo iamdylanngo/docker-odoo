@@ -14,7 +14,7 @@ services:
       - ./data/postgres:/var/lib/postgresql/data
 
   odoo:
-    image: odoo
+    image: odoo:15
     container_name: odoo
     restart: always
     depends_on:
