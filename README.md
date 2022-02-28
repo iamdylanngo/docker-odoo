@@ -12,10 +12,17 @@ docker exec -ti --user root odoo chown -R odoo:odoo /mnt/extra-addons/ /var/lib/
 
 ## Install odoo
 
-* DB Name: odoo
+* Go to [http://localhost:8069/](http://localhost:8069/)
+* Database Name: odoo
+
+![odoo 15](./data/img/step1.png)
+
+![odoo 15](./data/img/step2.png)
 
 ## How to create custom module?
 
 ```bash
 docker exec -ti odoo odoo scaffold /mnt/extra-addons/custom_module
 ```
+
+Thank for star to my project!

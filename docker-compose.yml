@@ -5,10 +5,12 @@ services:
     image: postgres:13
     container_name: postgres
     restart: always
+    ports:
+      - "5432:5432"
     environment:
-      POSTGRES_USER: odoo
-      POSTGRES_PASSWORD: odoo
-      POSTGRES_DB: postgres
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
       PGDATA: /var/lib/postgresql/data
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
@@ -23,9 +25,9 @@ services:
       - "8069:8069"
       - "8072:8072"
     environment:
-      - HOST=postgres
-      - USER=odoo
-      - PASSWORD=odoo
+      HOST: postgres
+      USER: ${POSTGRES_USER}
+      PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ./etc/odoo:/etc/odoo
       - ./data/addons:/mnt/extra-addons
