@@ -5,8 +5,16 @@ The repository support run odoo 15 in docker.
 ## How to run?
 
 ```bash
+
+git clone https://github.com/dylanops/docker-odoo.git
+
+cd docker-odoo
+
+cp .env.sample .env
+
 docker-compose up -d
-docker exec -ti --user root odoo chown -R odoo:odoo /mnt/extra-addons/ /var/lib/odoo/
+
+docker exec -ti --user root odoo chown -R odoo:odoo /mnt/extra-addons/ var/lib/odoo/
 
 ```
 
