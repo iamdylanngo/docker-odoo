@@ -25,8 +25,6 @@ Copy `.env.example` to `.env` and set:
 
 | Variable | Description |
 |----------|-------------|
-| `DOMAIN` | Your domain name |
-| `TLS_EMAIL` | Email for TLS certificate |
 | `POSTGRES_USER` | Database username (default: `odoo`) |
 | `POSTGRES_PASSWORD` | Database password |
 | `POSTGRES_DB` | Default database name (default: `postgres`) |
