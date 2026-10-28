@@ -78,6 +78,29 @@ Then restart Odoo:
 docker compose up -d --force-recreate odoo
 ```
 
+## Backup & Restore
+
+Scripts are in `scripts/` and use `pg_dump`/`pg_restore` via the running `db` container.
+
+**Backup**
+
+```bash
+./scripts/backup.sh <dbname>
+# Output saved to ./backups/<dbname>_<timestamp>.dump
+```
+
+**Restore** _(drops and recreates the database)_
+
+```bash
+./scripts/restore.sh <dbname> ./backups/<dbname>_<timestamp>.dump
+```
+
+You can also load the password from your `.env` before running:
+
+```bash
+source .env && ./scripts/backup.sh <dbname>
+```
+
 ## Useful Commands
 
 ```bash
